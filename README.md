@@ -27,5 +27,3 @@ To start the development server:
   <img src="https://github.com/FLOCK4H/Ivy/assets/161654571/4eb4b7f1-3b31-4ded-9193-0992285f8941" alt="Ivy interface_2" />
 
 </div>
-
-<h3>Enjoy!</h3>
