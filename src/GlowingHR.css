@@ -1,0 +1,15 @@
+/* Horizontal Line */
+.glowing-hr {
+  border: none;
+  height: 0px;
+  width: 300px;
+  background: linear-gradient(to right, #66bbff, #66bbff);
+  box-shadow: 0 0 5px 1px #66bbff; /* Updated to more radial glowing effect */  margin: 30px 20px 0px 0px; /* Adjust as needed */
+  border-radius: 50%; /* Maximally rounded */
+  margin-bottom: -50px;
+  transition: box-shadow 0.3s ease; /* Smooth transition for box-shadow */
+}
+
+.glowing-hr:hover {
+    box-shadow: 0 0 30px 4px #66ffff; /* Hover effect */
+  }

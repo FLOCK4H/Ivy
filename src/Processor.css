@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,300&display=swap');
+
+.processor-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between; /* Spread out the labels */
+    align-items: flex-start; /* Align to the top of the container */
+    height: 3rem; /* Increase the height to fit the labels */
+    font-family: 'Roboto Mono', sans-serif;
+    font-size: 0.70rem;
+    letter-spacing: 2px;
+    text-align: center;
+    cursor: pointer; /* Add a pointer cursor to indicate clickability */
+}
+
+.label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12rem;
+    height: 2rem; 
+    color: rgba(255,255,255,0.5);
+    padding: 0.5rem; 
+    cursor: pointer; 
+    transition: transform 0.3s ease;
+    -webkit-text-stroke: 0.1px;
+}
+
+.return-label {
+    background: linear-gradient(0deg, rgba(255,0,0,0.16), rgba(0,0,0,0.1));
+    position: absolute;
+    right: 0; /* Stick to the left side */
+}
+
+.proceed-label {
+    background: linear-gradient(0deg, rgba(0,255,0,0.16), rgba(0,0,0,0.1));
+    position: absolute;
+    left: 0; /* Stick to the right side */
+}
+
+.proceed-label img, .return-label img {
+    margin-left: 5px;
+}

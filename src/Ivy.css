@@ -1,0 +1,332 @@
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans+Semi+Condensed:wght@200&display=swap');
+
+html, body {
+  font-family: 'Open Sans', sans-serif;
+  padding: 0;
+  background: linear-gradient(-45deg, #000016, #000016);
+  color: #FFFFFF;
+  font-size: 1rem;
+  line-height: 1.6;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3 {
+  font-family: 'Merriweather', serif;
+}
+
+.App {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensure header, main, and footer are spaced out */
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #000000fa;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #4656b94f;
+  border-radius: 14px;
+
+  &:hover {
+    background-color: #003cd233;
+  }
+}
+
+/* Header Styles */
+header {
+  background-color: #00000033;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 1rem;
+  padding: 10px 0;
+}
+
+main {
+  flex: 1; /* Allows main to take up remaining space */
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 15vh; /* Move all items down */
+}
+
+/* Footer Styles */
+footer {
+  background-color: #00000033;
+  color: #FFFFFFb3;
+  text-align: center;
+  font-size: 0.8rem;
+  height: 3rem;
+  width: 100%;
+  line-height: 1.2rem;
+  position: fixed; /* Make the footer stick to the bottom */
+  bottom: 0; /* Align to the bottom */
+  left: 0; /* Align to the left */
+}
+
+/* Centered container for bubbles */
+.bubble-container {
+  max-width: 600px; /* Adjust this value as needed */
+  margin: 1em auto; /* Centers the container */
+  flex-direction: column;
+  align-items: center;
+}
+/* Bubble Styles */
+.bubble {
+  background: linear-gradient(-45deg, rgba(0,180,255,0.06),rgba(255,255,255,0.04),  rgba(0,180,255,0.05), rgba(255,255,255,0.01), rgba(0,180,255,0.05),  rgba(0,180,255,0.06));
+  border: 0px solid transparent;
+  border-radius: 14px;
+  text-align: justify;
+  margin-right: auto; /* Aligns the bubble to the left */
+  font-family: 'Roboto Condensed', sans-serif;
+  align-self: flex-start; /* Aligns the bubble to the left */
+  margin-bottom: 20px; /* Space between AI and user bubble */
+  font-size: 1.05rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.07rem;
+  text-shadow: 1px 1px 2px rgba(0,150,255,0.9);
+  color: #a9a9aafa;
+  padding: 0.75em;
+  box-shadow: -1px 1px 5px 1px #66aaff42, -1px 1px 35px 1px #66aaff42;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+  position: relative; /* This is crucial for the positioning of the stars */
+  text-rendering: geometricPrecision;
+  -webkit-text-stroke: 0.2px;
+  z-index: 1;
+}
+
+.bubble b,
+.bubble strong {
+  font-weight: 700;
+}
+
+.bubble:hover {
+  border: 0px solid transparent;
+  box-shadow: 0 0 1px 0px #a0dcff4d;
+}
+
+.bubble.active {
+  border: 0px solid transparent;
+  box-shadow: 0 0 8px 3px #a0dcff80; 
+}
+
+.user-bubble-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.user-bubble {
+  background: linear-gradient(-45deg, rgba(0,255,200,0.06), rgba(0,255,200,0.05), rgba(255,255,255,0.01), rgba(0,255,200,0.05), rgba(0,255,200,0.06));
+  border: 1px solid rgba(100,255,255,0.2);
+  -webkit-text-stroke: 0.2px;
+  border-radius: 1rem;
+  padding: 1.0em;
+  line-height: 1.4rem;
+  font-size: 1.05rem;
+  font-family: 'Sofia Sans Semi Condensed', sans-serif;
+  word-break: break-word;
+  display: flex;
+  color: rgba(200,200,255,1);
+  margin-top: 5px;
+  letter-spacing: 1px;
+  margin-right: 5px;
+  margin-bottom: 20px;
+  position: relative;
+  text-align: justify;
+  text-shadow: 1px 1px 1px rgba(0,255, 255, 0.5);
+  align-self: flex-end;
+  box-shadow: 0px 0px 12px 0px #44eeac44;
+  transition: all 0.3s ease;
+}
+/* Logo Animation Styles */
+.logo-animate {
+  animation: fadeIn 3s ease-in-out;
+  transition: transform 0.2s ease;
+}
+
+.logo-animate:active {
+  transform: scale(1.2);
+}
+
+/* Image Container Styles */
+.image-container {
+  width: 256px;
+  height: 256px;
+  display: flexbox;
+}
+
+.image-container img {
+  transition: transform 0.3s ease;
+}
+
+/* Cursor Styles */
+.cursor {
+  display: inline-block;
+  width: 0.8px;
+  height: 1.1em;
+  background-color: rgba(120,200,255,1.0);
+  margin-left: 2px;
+  vertical-align: middle;
+  transform: translateY(-2px);
+  box-shadow: 0 0 3px 1px rgba(120,200,255,1.0);
+}
+
+.cursor-blink {
+  animation: blink 1s step-start infinite;
+}
+
+/* TextInputWithSend Styles */
+.text-input-container {
+  width: 100%;
+  max-width: 28rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 20%;
+  margin-top: 50px;
+}
+
+.text-input-container textarea {
+  padding: 10px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.9rem;
+  border: 1px solid #933b9baa;
+  height: 1rem;
+  width: 28rem;
+  background: linear-gradient(-45deg, #FFFFFF0A, #FFFFFF03);
+  transition: all 0.3s ease-in-out;
+  resize: none;
+  overflow: hidden;
+  flex-grow: 1;
+  max-width: 28rem;
+}
+
+
+
+.text-input-container textarea:hover {
+  background: linear-gradient(-45deg, #FFFFFF11, #FFFFFF11); /* Hover effect */
+}
+
+.text-input-container textarea:focus {
+  height: 3rem; /* Expanded height */
+  font-size: 1rem;
+  text-indent: 0.15rem;
+  font-family: 'Lucida Console', sans-serif;
+  outline: none;
+  display: inline-block;
+  border-color: rgba(0, 22, 43, 0.1);
+  box-shadow: 0 0 5px 2px rgba(0, 32, 50, 0.6);
+  border-radius: 12px;
+  transition: all 0.3s ease-in-out;
+}
+
+.text-input-container button {
+  padding: 10px 15px;
+  border-radius: 24px;
+  background: none;
+  background-image: url('send.png');
+  width: 46px;
+  height: 46px;
+  margin-left: 5px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.3s ease, border-radius 0.3s ease; 
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.text-input-container textarea:focus ~ button {
+  background-color: #1c405e; /* Change to your desired color */
+  margin-left: 8px;
+  border-radius: 14px;
+}
+
+.text-input-container button:hover {
+  background-color: #8fb2e9;
+  transform: scale(1.1);
+  border-radius: 12px;
+}
+
+.ideas-content-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  top: 300px;
+}
+
+.idea-images-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  margin-top: 100px;
+  left: 0px;
+  z-index: 10;
+  transform: translateX(-135px);
+}
+
+.idea-images-container img {
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.star {
+  -webkit-user-drag: none;
+}
+
+.robot-image-container {
+  position: absolute; 
+  right: 80px; 
+  z-index: 11; 
+  border: none;
+  margin-top: 10px;
+
+}
+
+.robot-image-container img {
+  transition: transform 0.5s ease-in-out;
+
+}
+
+
+.fadeIn-animate {
+  animation: fadeIn2 3s ease-in-out;
+  animation-fill-mode: forwards; /* Add this to ensure the final state of the animation persists */
+}
+.stars-container {
+  opacity: 0.6;
+  z-index: 0;
+  position: absolute;
+}
+/* Keyframes */
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeIn2 {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

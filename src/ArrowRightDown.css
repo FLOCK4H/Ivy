@@ -1,0 +1,21 @@
+.arrow-container {
+    width: 256px;
+    height: 128px;
+    position: absolute;
+    bottom: 20px;
+    left: -205px;
+    /* Set initial rotation here */
+    transform: translate(-50px, -30px) rotate(-90deg); /* Starts rotated at -90 degrees */
+    transition: transform 0.9s ease-out, opacity 0.8s ease-out; /* Transition for transform and opacity */
+    opacity: 1;
+  }
+  
+  .arrow-container.animate {
+    /* Rotate to final degree while translating */
+    transform: translate(40px, 0) rotate(0deg); /* Ends rotated at 0 degrees */
+  }
+  
+  .arrow-container.hide {
+    opacity: 0;
+    pointer-events: none; /* Prevents the arrow from being clickable when invisible */
+  }

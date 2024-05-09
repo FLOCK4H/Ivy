@@ -1,0 +1,50 @@
+.cursor-container {
+    position: absolute;
+    top: 80px;
+    right: -100px;
+    transition: transform 0.4s ease-in; /* Transition for cursor movement */
+  }
+  
+  .cursor-container.animate {
+    transform: translate(-100px, -60px); /* End position of cursor movement */
+  }
+  
+  .cursor-container.click {
+    /* Remove transition here to allow the animation to control the transform */
+    transition: none;
+    animation: clickEffect 1.0s ease-in-out forwards; /* Click effect animation */
+  }
+  
+  @keyframes clickEffect {
+    0%, 100% { transform: translate(-100px, -60px) scale(1); }
+    50% { transform: translate(-100px, -60px) scale(0.5); } /* Make sure the scale is what you want */
+  }
+  .wave {
+    position: absolute;
+    bottom: 20px;
+    right: 5px;
+    width: 32px; /* Start size should match the cursor */
+    height: 40px;
+    background: url('wave.png') no-repeat center center; /* Adjust the path */
+    background-size: cover;
+    border-radius: 50%; /* Makes the div circular */
+    transform: scale(0);
+    opacity: 0;
+  }
+  
+  .wave.show {
+    animation: waveExpand 2s ease-out forwards;
+    animation-delay: var(--wave-delay, 0ms); /* Custom property for delay */
+  }
+  .cursor-container:not(.animate) {
+    animation: fadeOut 1s ease-out forwards;
+  }
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+
+  @keyframes waveExpand {
+    0% { transform: scale(0); opacity: 1; }
+    100% { transform: scale(5); opacity: 0; }
+  }
